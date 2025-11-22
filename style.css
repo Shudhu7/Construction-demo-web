@@ -121,6 +121,24 @@ body {
     transition: all 0.3s ease;
 }
 
+/* Logo */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.logo img {
+    height: 48px;
+    /* adjust as needed */
+    width: auto;
+}
+
+
 /* Hero Section */
 .hero {
     position: relative;
