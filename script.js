@@ -266,3 +266,109 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial navigation highlight
     highlightNavigation();
 });
+
+// ==========================
+// Looping Auto Typing Effect
+// ==========================
+
+const typedTextElement = document.getElementById("typed-text");
+
+const words = ["Build Your Dream", "Build Your Future", "We Make It Strong"]; 
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function typeLoop() {
+    const currentWord = words[wordIndex];
+    const displayedText = currentWord.substring(0, charIndex);
+
+    typedTextElement.innerHTML = displayedText;
+
+    if (!isDeleting) {
+        // typing forward
+        if (charIndex < currentWord.length) {
+            charIndex++;
+        } else {
+            isDeleting = true;
+            setTimeout(typeLoop, 1200); // hold before deleting
+            return;
+        }
+    } else {
+        // deleting
+        if (charIndex > 0) {
+            charIndex--;
+        } else {
+            isDeleting = false;
+            wordIndex = (wordIndex + 1) % words.length; // next word
+        }
+    }
+
+    setTimeout(typeLoop, isDeleting ? 80 : 120);
+}
+
+window.addEventListener("load", () => {
+    typeLoop();
+});
+
+// =======================================
+// LOOPING Auto-Hover Effect for Services
+// =======================================
+
+const loopCards = document.querySelectorAll(".service-card");
+let loopIndex = 0;
+
+function loopHoverEffect() {
+    // Remove hover class from all cards
+    loopCards.forEach(card => card.classList.remove("auto-hover"));
+
+    // Add hover class to current card
+    loopCards[loopIndex].classList.add("auto-hover");
+
+    // Remove after effect duration
+    setTimeout(() => {
+        loopCards[loopIndex].classList.remove("auto-hover");
+
+        // Move to next card
+        loopIndex = (loopIndex + 1) % loopCards.length;
+
+        // Repeat loop
+        setTimeout(loopHoverEffect, 400);
+    }, 800); // hover effect duration
+}
+
+// Start loop when page loads
+window.addEventListener("load", () => {
+    loopHoverEffect();
+});
+
+// ==================================================
+// LOOPING Auto Hover + Zoom In-Out Effect
+// ==================================================
+
+const zoomCards = document.querySelectorAll(".service-card");
+let zIndex = 0;
+
+function loopZoomEffect() {
+    // Remove animation from all cards
+    zoomCards.forEach(card => {
+        card.classList.remove("auto-hover");
+        card.classList.remove("zoom-effect");
+    });
+
+    // Apply zoom + auto-hover effect to current card
+    const current = zoomCards[zIndex];
+    current.classList.add("auto-hover");
+    current.classList.add("zoom-effect");
+
+    // Move to next card
+    zIndex = (zIndex + 1) % zoomCards.length;
+
+    // Repeat every 1.3s
+    setTimeout(loopZoomEffect, 1300);
+}
+
+// Start after page loads
+window.addEventListener("load", () => {
+    loopZoomEffect();
+});
+
