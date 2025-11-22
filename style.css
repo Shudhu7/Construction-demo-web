@@ -317,22 +317,73 @@ body {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
 }
 
 .service-card {
-    background: linear-gradient(135deg, var(--primary-color) 0%, #3b82f6 100%);
-    color: var(--white);
-    padding: 3rem 2rem;
+    height: 380px;
+    /* Same as team card height */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 2rem 1.5rem;
+    background-color: var(--white);
     border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
     text-align: center;
     transition: transform 0.3s ease;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.service-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    /* dark overlay */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+}
+
+.service-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white(0, 0, 0, 0.55);
+    z-index: 0;
+}
+
+.service-card * {
+    position: relative;
+    z-index: 1;
+    transform: scale(1);
+    transition: transform 0.25s ease-in-out;
 }
 
 .service-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
+
+}
+
+.service-card:hover::after {
+    opacity: 1;
 }
 
 .service-icon {
@@ -341,12 +392,35 @@ body {
 }
 
 .service-card h3 {
+    border-radius: 10px;
     margin-bottom: 1rem;
     font-size: 1.5rem;
+    color: var(--primary-color);
 }
 
 .service-card p {
-    opacity: 0.9;
+    opacity: auto;
+}
+
+/* Background Images */
+.bg-piling {
+    background-image: url("https://images.jdmagicbox.com/quickquotes/images_main/secant-piling-services-2220627729-a9pi7za0.jpg");
+}
+
+.bg-rental {
+    background-image: url("https://content.jdmagicbox.com/comp/service_catalogue/construction-vehicles-on-hire-attr-types-of-cranes-available-cvh5-2.jpg");
+}
+
+.bg-special {
+    background-image: url("https://5.imimg.com/data5/SELLER/Default/2025/7/527729957/AZ/NO/EV/156887986/hydraulic-rotary-piling-service.jpg");
+}
+
+.bg-testing {
+    background-image: url("https://5.imimg.com/data5/SELLER/Default/2023/4/301338211/GW/EH/BR/59981645/soil-investigation-and-soil-testing-services.jpg");
+}
+
+.bg-extra {
+    background-image: url("https://5.imimg.com/data5/SELLER/Default/2023/11/363434915/BY/UN/XM/43222174/ms-liner-plate-rolling-job-work.jpg");
 }
 
 /* Team Section */

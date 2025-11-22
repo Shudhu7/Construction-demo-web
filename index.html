@@ -4,47 +4,55 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BuildPro Construction - Home</title>
+    <title>Future Pile Foundation - Home</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
 </head>
 
 <body>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-wrapper">
-                <div class="logo">BuildPro</div>
+                <div class="logo">Future Pile Foundation</div>
                 <button class="mobile-toggle" id="mobileToggle">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
                 <ul class="nav-menu" id="navMenu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="team.html">Team</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="testimonials.html">Testimonials</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <!-- Single-page anchors for index -->
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <!-- keep separate pages available as fallback -->
+                    <li style="display:none"><a href="about.html">About (page)</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section (from your Home/index). -->
     <section class="hero" id="home">
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1 class="hero-title">Build Your Dream</h1>
             <p class="hero-subtitle">Vision Got Larger</p>
-            <p class="hero-text">Our vision is to lead the construction industry by pioneering innovative and
-                sustainable building practices while delivering exceptional quality and value to our clients.</p>
-            <a href="contact.html" class="btn btn-primary">Get Started</a>
+            <p class="hero-text">At Future Pile Foundation, our vision is to be the most trusted and innovative partner
+                in foundation engineering. Using advanced technology and precise execution, we aim to build stronger,
+                safer, and more reliable foundations that support India’s growing infrastructure. Every project we
+                deliver takes us one step closer to a stronger and more ambitious future.</p>
+            <a href="#contact" class="btn btn-primary">Get Started</a>
         </div>
     </section>
 
-    <!-- Stats Section -->
+    <!-- Stats Section (from index/home) -->
     <section class="stats">
         <div class="container">
             <div class="stats-grid">
@@ -53,7 +61,7 @@
                     <p class="stat-text">Successfully Project Finished</p>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number" data-target="36">0</div>
+                    <div class="stat-number" data-target="20">0</div>
                     <p class="stat-text">Years of experience with proud</p>
                 </div>
                 <div class="stat-item">
@@ -68,21 +76,315 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- About Section (copied from about.html) -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2 class="section-title">Introduction</h2>
+                    <p>Established in 2006, Future Pile Foundation has grown into a trusted and professional name in the
+                        drilling, piling, and foundation services sector. Specializing in a wide range of solutions
+                        including drilling services, rental services, and comprehensive foundation work, the company
+                        consistently delivers dependable and high-quality results backed by strong technical expertise.
+                    </p>
+                    <p>With a dedicated team and modern equipment, Future Pile Foundation continues to strengthen its
+                        position in the industry by offering advanced piling services, geotechnical investigations, soil
+                        testing, and specialized drilling solutions. The company’s commitment to reliability,
+                        innovation, and customer satisfaction has enabled it to emerge as a preferred partner for
+                        construction and infrastructure projects.</p>
+                    <div class="about-features">
+                        <div class="feature-item">✓ Quality Assurance</div>
+                        <div class="feature-item">✓ Timely Delivery</div>
+                        <div class="feature-item">✓ Expert Team</div>
+                        <div class="feature-item">✓ Modern Technology</div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&h=400&fit=crop"
+                        alt="Construction Site">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose / (optional) -->
+    <section class="why-choose">
+        <div class="container">
+            <h2 class="section-title">Why Choose Future Pile Foundation</h2>
+            <div class="why-grid">
+                <div class="why-item">
+                    <div class="why-icon">🏗️</div>
+                    <h3>Proven Experience</h3>
+                    <p>Years of reliable service in piling, drilling, and foundation engineering.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon">🔬</div>
+                    <h3>Modern Technology</h3>
+                    <p>Use of modern rigs, testing, and geotechnical practices for safer foundations.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon">🕒</div>
+                    <h3>Timely Delivery</h3>
+                    <p>Efficient planning and execution to meet project deadlines.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section (from services.html) -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Professional Piling, Drilling & Foundation Solutions</p>
+
+            <div class="services-grid">
+
+                <!-- Piling Services -->
+                <div class="service-card bg-piling">
+                    <div class="service-icon"></div>
+                    <h3>Piling Services</h3>
+                    <p>
+                        • Piling Contractor Services <br>
+                        • RCC Pile Construction Service <br>
+                        • Pile Foundation Service <br>
+                        • Pile Chipping Service
+                    </p>
+                </div>
+
+                <!-- Rental Services -->
+                <div class="service-card bg-rental">
+                    <div class="service-icon"></div>
+                    <h3>Rental Services</h3>
+                    <p>
+                        • Hydraulic Rig Rental Service <br>
+                        • Tripod Rig Rental Service <br>
+                        • Rig Piling Tools Rental Service
+                    </p>
+                </div>
+
+                <!-- Specialized Piling -->
+                <div class="service-card bg-special">
+                    <div class="service-icon"></div>
+                    <h3>Specialized Piling</h3>
+                    <p>
+                        • Micro Drilling Piling Service <br>
+                        • Hydraulic Rotary Piling Service <br>
+                        • Bored Cast In Situ Pile Service
+                    </p>
+                </div>
+
+                <!-- Investigation & Testing -->
+                <div class="service-card bg-testing">
+                    <div class="service-icon"></div>
+                    <h3>Investigation & Testing</h3>
+                    <p>
+                        • Geotechnical Investigation Service <br>
+                        • Soil Investigation Service <br>
+                        • Soil Testing Services
+                    </p>
+                </div>
+
+                <!-- Additional Services -->
+                <div class="service-card bg-extra">
+                    <div class="service-icon"></div>
+                    <h3>Additional Services</h3>
+                    <p>
+                        • MS Liner Plate Rolling Job Work <br>
+                        • Micro Piling Service <br>
+                        • Tripod Core Drilling Service <br>
+                        • Truck Mounted Drilling Service
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section (from team.html) -->
+    <section class="team" id="team">
+        <div class="container">
+            <h2 class="section-title">Meet Our Team</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop"
+                            alt="Team Member">
+                    </div>
+                    <h3>John Smith</h3>
+                    <p class="team-role">Founder & Chairman</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300&h=300&fit=crop"
+                            alt="Team Member">
+                    </div>
+                    <h3>Michael Johnson</h3>
+                    <p class="team-role">Managing Director</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop"
+                            alt="Team Member">
+                    </div>
+                    <h3>Robert Williams</h3>
+                    <p class="team-role">Executive Director</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section (from portfolio.html) -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <h2 class="section-title">Our Latest Works</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=400&h=300&fit=crop"
+                        alt="Project 1">
+                    <div class="portfolio-overlay">
+                        <h3>Commercial Complex</h3>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=300&fit=crop"
+                        alt="Project 2">
+                    <div class="portfolio-overlay">
+                        <h3>Office Tower</h3>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400&h=300&fit=crop"
+                        alt="Project 3">
+                    <div class="portfolio-overlay">
+                        <h3>Residential Project</h3>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=400&h=300&fit=crop"
+                        alt="Project 4">
+                    <div class="portfolio-overlay">
+                        <h3>Bridge Construction</h3>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=400&h=300&fit=crop"
+                        alt="Project 5">
+                    <div class="portfolio-overlay">
+                        <h3>Infrastructure Development</h3>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1541976590-713941681591?w=400&h=300&fit=crop"
+                        alt="Project 6">
+                    <div class="portfolio-overlay">
+                        <h3>Industrial Complex</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials (from testimonials.html) -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial-card active">
+                    <div class="testimonial-header">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop"
+                            alt="Client">
+                        <div class="testimonial-info">
+                            <h4>ABC Infrastructure Ltd</h4>
+                            <p class="client-name">Mr. David Brown</p>
+                            <p class="client-role">Project Director</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"You did a great job on this project, keep up the good work! Your time
+                        management skills are truly valuable to the team."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop"
+                            alt="Client">
+                        <div class="testimonial-info">
+                            <h4>XYZ Projects Pvt Ltd</h4>
+                            <p class="client-name">Mr. James Wilson</p>
+                            <p class="client-role">General Manager</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Best company ever for teamwork. Excellent services and best company for
+                        foundation work. Highly recommended!"</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=80&h=80&fit=crop"
+                            alt="Client">
+                        <div class="testimonial-info">
+                            <h4>Metro Rail Corporation</h4>
+                            <p class="client-name">Mr. Thomas Anderson</p>
+                            <p class="client-role">Project Coordinator</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Very well-known company in construction. Successfully completed work on
+                        our prestigious projects with excellent quality."</p>
+                </div>
+            </div>
+            <div class="testimonial-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section (from contact.html) -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Request a Quote</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>Ready to start your project? Contact us today for a consultation.</p>
+                    <div class="contact-item">
+                        <strong>📞 Phone:</strong>
+                        <p>+91-7942723533</p>
+                    </div>
+                    <div class="contact-item">
+                        <strong>✉️ Email:</strong>
+                        <p>info@Future.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <strong>📍 Address:</strong>
+                        <p>Sneh Bandhan CHS, D-15, 1/2, Opp Sanpada Railway Station, Sector-3, Sanpada, Navi Mumbai -
+                            400705, Maharashtra, India</p>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="tel" placeholder="Phone Number" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (single footer for consolidated page) -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>BuildPro Construction</h3>
-                    <p>Building dreams since 1988. Quality, innovation, and excellence in every project.</p>
+                    <h3>Future Pile Foundation</h3>
+                    <p>Building dreams since 2006. Quality, innovation, and excellence in every project.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -96,7 +398,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 BuildPro Construction. All rights reserved.</p>
+                <p>&copy; 2025 Future Pile Foundation. All rights reserved.</p>
             </div>
         </div>
     </footer>
