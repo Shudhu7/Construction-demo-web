@@ -267,6 +267,7 @@ document.addEventListener('DOMContentLoaded', () => {
     highlightNavigation();
 });
 
+
 // ==========================
 // Looping Auto Typing Effect
 // ==========================
@@ -311,64 +312,32 @@ window.addEventListener("load", () => {
 });
 
 // =======================================
-// LOOPING Auto-Hover Effect for Services
+// Scroll Down Indicator Click Handler
 // =======================================
 
-const loopCards = document.querySelectorAll(".service-card");
-let loopIndex = 0;
-
-function loopHoverEffect() {
-    // Remove hover class from all cards
-    loopCards.forEach(card => card.classList.remove("auto-hover"));
-
-    // Add hover class to current card
-    loopCards[loopIndex].classList.add("auto-hover");
-
-    // Remove after effect duration
-    setTimeout(() => {
-        loopCards[loopIndex].classList.remove("auto-hover");
-
-        // Move to next card
-        loopIndex = (loopIndex + 1) % loopCards.length;
-
-        // Repeat loop
-        setTimeout(loopHoverEffect, 400);
-    }, 800); // hover effect duration
-}
-
-// Start loop when page loads
-window.addEventListener("load", () => {
-    loopHoverEffect();
-});
-
-// ==================================================
-// LOOPING Auto Hover + Zoom In-Out Effect
-// ==================================================
-
-const zoomCards = document.querySelectorAll(".service-card");
-let zIndex = 0;
-
-function loopZoomEffect() {
-    // Remove animation from all cards
-    zoomCards.forEach(card => {
-        card.classList.remove("auto-hover");
-        card.classList.remove("zoom-effect");
+const scrollDownBtn = document.querySelector('.scroll-down');
+if (scrollDownBtn) {
+    scrollDownBtn.addEventListener('click', () => {
+        const aboutSection = document.getElementById('about');
+        if (aboutSection) {
+            const offsetTop = aboutSection.offsetTop - 70;
+            window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+            });
+        }
     });
-
-    // Apply zoom + auto-hover effect to current card
-    const current = zoomCards[zIndex];
-    current.classList.add("auto-hover");
-    current.classList.add("zoom-effect");
-
-    // Move to next card
-    zIndex = (zIndex + 1) % zoomCards.length;
-
-    // Repeat every 1.3s
-    setTimeout(loopZoomEffect, 1300);
 }
 
-// Start after page loads
-window.addEventListener("load", () => {
-    loopZoomEffect();
+// Hide scroll indicator when scrolling past hero
+window.addEventListener('scroll', () => {
+    if (scrollDownBtn) {
+        if (window.scrollY > 100) {
+            scrollDownBtn.style.opacity = '0';
+            scrollDownBtn.style.pointerEvents = 'none';
+        } else {
+            scrollDownBtn.style.opacity = '1';
+            scrollDownBtn.style.pointerEvents = 'auto';
+        }
+    }
 });
-
