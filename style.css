@@ -147,30 +147,30 @@ body {
     height: 100%;
     background: rgba(30, 58, 138, 0.8);
     z-index: 0;
-
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
-    /* in front of overlay but behind the navbar */
     color: var(--white);
     max-width: 800px;
     padding: 0 20px;
     padding-top: 12px;
-    /* small top gap so content isn't flush to top */
 }
 
 /* Main typed title (responsive) */
 .hero-title {
     font-size: 4rem;
-    /* desktop default */
     font-weight: 700;
     margin-bottom: 1rem;
     animation: fadeInUp 1s ease;
-    line-height: 1.03;
+    line-height: 1.2;
     word-break: break-word;
     white-space: normal;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Subtitle smaller than title */
@@ -195,6 +195,8 @@ body {
     font-size: inherit;
     line-height: inherit;
     white-space: normal;
+    text-align: center;
+    width: 100%;
 }
 
 @keyframes fadeInUp {
@@ -854,41 +856,53 @@ body {
 @media (max-width: 968px) {
     .mobile-toggle {
         display: flex;
-        display: flex;
         flex-direction: column;
         background: none;
         border: none;
         cursor: pointer;
         gap: 4px;
-        margin-left: 10px;
-        margin-right: 8px;
         height: 36px;
         width: 36px;
         align-items: center;
         justify-content: center;
-
     }
 
     /* on small screens: nav menu becomes a block that pushes content down when active */
     .nav-menu {
-        position: relative;
-        /* changed so menu pushes content instead of overlaying */
-        top: 0;
+        position: absolute;
+        top: 100%;
         left: 0;
         right: 0;
         background-color: var(--white);
         flex-direction: column;
-        padding: 1rem 2rem;
+        padding: 0;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        transform: none;
-        opacity: 1;
-        visibility: visible;
         display: none;
-        /* hide by default, shown when active */
+        gap: 0;
     }
 
     .nav-menu.active {
         display: flex;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-menu li a {
+        display: block;
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        width: 100%;
+    }
+
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .logo {
+        font-size: 1.3rem;
     }
 
     .hero-title {
@@ -915,16 +929,34 @@ body {
 
 @media (max-width: 640px) {
     .hero {
-        height: 80vh;
+        height: 100vh;
+        min-height: 600px;
     }
 
     /* ensure hero content gets extra top spacing so navbar doesn't overlap */
     .hero-content {
-        padding-top: calc(1rem + 12px);
+        padding-top: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 500px;
     }
 
     .hero-title {
         font-size: 1.9rem;
+        min-height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1.2;
+    }
+
+    .hero-subtitle {
+        font-size: 1.3rem;
+    }
+
+    .hero-text {
+        font-size: 1rem;
     }
 
     .stats-grid {
