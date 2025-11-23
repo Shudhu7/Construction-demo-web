@@ -94,6 +94,7 @@ body {
     gap: 2rem;
 }
 
+/* default nav links */
 .nav-menu li a {
     text-decoration: none;
     color: var(--text-dark);
@@ -121,24 +122,6 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Logo */
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 0px;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--primary-color);
-}
-
-.logo img {
-    height: 48px;
-    /* adjust as needed */
-    width: auto;
-}
-
-
 /* Hero Section */
 .hero {
     position: relative;
@@ -149,6 +132,7 @@ body {
     justify-content: center;
     text-align: center;
     margin-top: 70px;
+    /* space for fixed navbar */
     background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&h=1080&fit=crop');
     background-size: cover;
     background-position: center;
@@ -162,23 +146,34 @@ body {
     width: 100%;
     height: 100%;
     background: rgba(30, 58, 138, 0.8);
+    z-index: 0;
+
 }
 
 .hero-content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
+    /* in front of overlay but behind the navbar */
     color: var(--white);
     max-width: 800px;
     padding: 0 20px;
+    padding-top: 12px;
+    /* small top gap so content isn't flush to top */
 }
 
+/* Main typed title (responsive) */
 .hero-title {
     font-size: 4rem;
+    /* desktop default */
     font-weight: 700;
     margin-bottom: 1rem;
     animation: fadeInUp 1s ease;
+    line-height: 1.03;
+    word-break: break-word;
+    white-space: normal;
 }
 
+/* Subtitle smaller than title */
 .hero-subtitle {
     font-size: 2rem;
     margin-bottom: 1.5rem;
@@ -191,6 +186,15 @@ body {
     margin-bottom: 2rem;
     line-height: 1.8;
     animation: fadeInUp 1s ease 0.4s backwards;
+}
+
+/* ensure typed span inherits visible styles */
+#typed-text {
+    display: inline-block;
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    white-space: normal;
 }
 
 @keyframes fadeInUp {
@@ -342,7 +346,6 @@ body {
 
 .service-card {
     height: 380px;
-    /* Same as team card height */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -358,9 +361,6 @@ body {
     background-repeat: no-repeat;
     color: white;
     position: relative;
-    overflow: hidden;
-    position: relative;
-    transition: all 0.3s ease;
 }
 
 .service-card::after {
@@ -371,7 +371,6 @@ body {
     width: 100%;
     height: 100%;
     background: rgba(30, 58, 138, 0.8);
-    /* dark overlay */
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: 0;
@@ -384,7 +383,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: white(0, 0, 0, 0.55);
+    background: rgba(255, 255, 255, 0.0);
     z-index: 0;
 }
 
@@ -397,7 +396,6 @@ body {
 
 .service-card:hover {
     transform: scale(1.03);
-
 }
 
 .service-card:hover::after {
@@ -856,27 +854,41 @@ body {
 @media (max-width: 968px) {
     .mobile-toggle {
         display: flex;
+        display: flex;
+        flex-direction: column;
+        background: none;
+        border: none;
+        cursor: pointer;
+        gap: 4px;
+        margin-left: 10px;
+        margin-right: 8px;
+        height: 36px;
+        width: 36px;
+        align-items: center;
+        justify-content: center;
+
     }
 
+    /* on small screens: nav menu becomes a block that pushes content down when active */
     .nav-menu {
-        position: absolute;
-        top: 100%;
+        position: relative;
+        /* changed so menu pushes content instead of overlaying */
+        top: 0;
         left: 0;
         right: 0;
         background-color: var(--white);
         flex-direction: column;
-        padding: 2rem;
+        padding: 1rem 2rem;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        transform: translateY(-100%);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        display: none;
+        /* hide by default, shown when active */
     }
 
     .nav-menu.active {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
+        display: flex;
     }
 
     .hero-title {
@@ -906,8 +918,13 @@ body {
         height: 80vh;
     }
 
+    /* ensure hero content gets extra top spacing so navbar doesn't overlap */
+    .hero-content {
+        padding-top: calc(1rem + 12px);
+    }
+
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.9rem;
     }
 
     .stats-grid {
@@ -931,7 +948,6 @@ body {
         transform: scale(1.08);
     }
 
-    /* change to 1.10 if you want stronger zoom */
     100% {
         transform: scale(1);
     }
@@ -940,7 +956,6 @@ body {
 /* keeps overlay visible while zooming */
 .service-card.auto-hover,
 .service-card.zoom-effect {
-    /* ensure smooth transform origin */
     transform-origin: center center;
 }
 
